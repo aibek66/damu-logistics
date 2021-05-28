@@ -145,6 +145,9 @@ export default {
         background-color: rgba(140, 194, 64, 1);
         border-radius: 50%;
         padding: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .swiper-button-next{
         transform: rotate(180deg);
