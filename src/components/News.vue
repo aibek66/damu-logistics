@@ -148,6 +148,7 @@ export default {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 10;
     }
     .swiper-button-next{
         right: 1%;
