@@ -1,30 +1,122 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <NavbarMobile v-if="mobileView" />
+    <Header v-if="!mobileView" />
+    <router-view/>
+    <Footer />
   </div>
-  <router-view/>
 </template>
 
+<script>
+
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import NavbarMobile from './components/NavbarMobile.vue'
+
+export default {
+  name: 'App',
+  components:{
+    Header,
+    Footer,
+    NavbarMobile
+  },
+  data(){
+    return{
+      mobileView: false,
+    }
+  },
+  methods:{
+    handleView (){
+      this.mobileView = window.innerWidth <= 992;
+    }
+  },
+  created(){
+    this.handleView();
+    window.addEventListener('resize', this.handleView);
+  }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+input, button, textarea{
+	font-family: inherit;
+	outline: none;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+a{
+  text-decoration: none;
+}
+
+ul{
+	list-style: none;
+}
+
+h1{
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 39px;
+}
+
+h2{
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 33px;
+}
+
+h3{
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+p{
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 25px;
+}
+
+button{
+	font-size: 16px;
+	font-weight: 600;
+	padding: 11px 24px;
+	border: none;
+	border-radius: 10px;
+}
+
+.header-container{
+	max-width: 1300px;
+	width: 90%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.container{
+  max-width: 1110px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-title{
+	h1{
+		margin-bottom: 15px;
+	}
+	margin-bottom: 30px;
+}
+
+.btn-primary{
+	color: #fff;
+	background-color: rgba(140, 194, 64, 1);
 }
 </style>
