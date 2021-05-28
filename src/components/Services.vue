@@ -41,7 +41,7 @@
                     <h3>Бытовая техника и электроника</h3>
                 </swiper-slide>
                 <img class="swiper-button-prev"  src="../assets/slider-arrow.svg" alt="" />
-                <img class="swiper-button-next" src="../assets/slider-arrow.svg" alt="" />
+                <img class="swiper-button-next" src="../assets/arrow-right.svg" alt="" />
             </swiper>
 
             <div class="btn-box">
@@ -138,7 +138,6 @@
         transform: translateY(-50%);
     }
     .swiper-button-next{
-        transform: rotate(180deg);
         right: 1%;
     }
     .swiper-button-prev{

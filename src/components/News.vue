@@ -52,7 +52,7 @@
                     <h3>Автоматизация и международные стандарты McDonald’s</h3>
                 </swiper-slide>
                 <img class="swiper-button-prev" src="../assets/slider-arrow.svg" alt="" />
-                <img class="swiper-button-next" src="../assets/slider-arrow.svg" alt="" />
+                <img class="swiper-button-next" src="../assets/arrow-right.svg" alt="" />
             </swiper>
 
             <div class="btn-box">
@@ -150,7 +150,6 @@ export default {
         transform: translateY(-50%);
     }
     .swiper-button-next{
-        transform: rotate(180deg);
         right: 1%;
     }
     .swiper-button-prev{
